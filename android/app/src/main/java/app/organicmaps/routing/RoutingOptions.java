@@ -28,14 +28,14 @@ public class RoutingOptions
   private static native void nativeRemoveOption(int option);
   private static native boolean nativeHasOption(int option);
 
-  public static boolean hasAnyOptions()
-  {
+  public static int hasAnyOptions()
+  { int i=0;
     for (RoadType each : RoadType.values())
     {
       if (hasOption(each))
-        return true;
+        i++;
     }
-    return false;
+    return i;
   }
 
   @NonNull
